@@ -56,17 +56,19 @@ class OpFeesTerms(models.Model):
                             digits='Discount', default=0.0)
 
     @api.model_create_multi
-    def create(self, vals):
-        res = super(OpFeesTerms, self).create(vals)
-        if not res.line_ids:
-            raise exceptions.AccessError(_("Fees Terms must be Required!"))
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals['line_ids']:
+                raise exceptions.AccessError(_("Fees Terms must be Required!"))
         total = 0.0
-        for line in res.line_ids:
-            if line.value:
-                total += line.value
-        if total != 100.0:
-            raise exceptions.AccessError(
-                _("Fees terms must be divided as such sum up in 100%"))
+        res = super(OpFeesTerms, self).create(vals_list)
+        for rec in res:
+            for line in rec.line_ids:
+                if line.value:
+                    total += line.value
+            if total != 100.0:
+                raise exceptions.AccessError(
+                    _("Fees terms must be divided as such sum up in 100%"))
         return res
 
 

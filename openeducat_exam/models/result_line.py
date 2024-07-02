@@ -73,4 +73,4 @@ class OpResultLine(models.Model):
     def unlink(self):
         for res in self:
             super(OpResultLine, res).unlink()
-        return self
+        return True

@@ -33,5 +33,6 @@ class OpDepartment(models.Model):
     @api.model_create_multi
     def create(self, vals):
         department = super(OpDepartment, self).create(vals)
-        self.env.user.write({'department_ids': [(4, department.id)]})
+        if department:
+            self.env.user.write({'department_ids': [(4, department.id)]})
         return department
