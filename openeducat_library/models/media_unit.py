@@ -27,6 +27,7 @@ class OpMediaUnit(models.Model):
     _inherit = "mail.thread"
     _description = "Media Unit"
     _order = "name"
+    _rec_name = "display_name"
 
     name = fields.Char('Name', required=True)
     media_id = fields.Many2one('op.media', 'Media',
@@ -40,6 +41,7 @@ class OpMediaUnit(models.Model):
     media_type_id = fields.Many2one(related='media_id.media_type_id',
                                     store=True, string='Media Type')
     active = fields.Boolean(default=True)
+    display_name = fields.Char(compute='_compute_display_name')
 
     _sql_constraints = [
         ('unique_name_barcode',
@@ -65,4 +67,9 @@ class OpMediaUnit(models.Model):
         if not recs:
             recs = self.search(
                 [('barcode', operator, name)] + args, limit=limit)
-        return recs.name_get()
+        return super(OpMediaUnit, self).name_search(
+            name, args, operator=operator, limit=limit)
+
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = f"{record.name} {record.media_id.name}"
