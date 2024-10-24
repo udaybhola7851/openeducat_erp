@@ -22,11 +22,32 @@
             <field name="roll_number">456123</field>
         </record>
 
+        <record id="op_student_course_4" model="op.student.course">
+            <field name="student_id" ref="op_student_4"/>
+            <field name="course_id" ref="op_course_2"/>
+            <field name="batch_id" ref="op_batch_1"/>
+            <field name="roll_number">123789</field>
+        </record>
+
         <record id="op_student_course_5" model="op.student.course">
             <field name="student_id" ref="op_student_5"/>
             <field name="course_id" ref="op_course_3"/>
             <field name="batch_id" ref="op_batch_2"/>
             <field name="roll_number">539649</field>
+        </record>
+
+        <record id="op_student_course_6" model="op.student.course">
+            <field name="student_id" ref="op_student_6"/>
+            <field name="course_id" ref="op_course_3"/>
+            <field name="batch_id" ref="op_batch_2"/>
+            <field name="roll_number">646463</field>
+        </record>
+
+        <record id="op_student_course_7" model="op.student.course">
+            <field name="student_id" ref="op_student_7"/>
+            <field name="course_id" ref="op_course_3"/>
+            <field name="batch_id" ref="op_batch_2"/>
+            <field name="roll_number">548565</field>
         </record>
 
         <record id="op_student_course_8" model="op.student.course">
@@ -105,6 +126,7 @@
             <field name="batch_id" ref="op_batch_12"/>
             <field name="roll_number">241575</field>
         </record>
+
         <record id="op_student_course_19" model="op.student.course">
             <field name="student_id" ref="op_student_2"/>
             <field name="course_id" ref="op_course_23"/>
