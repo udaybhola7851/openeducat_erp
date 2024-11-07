@@ -19,10 +19,21 @@
 #
 ###############################################################################
 
-from odoo import models, fields
+from odoo import models, fields,api,_
+from odoo.exceptions import ValidationError
 
 
 class OpFacilityLine(models.Model):
     _inherit = "op.facility.line"
 
     classroom_id = fields.Many2one('op.classroom', 'Classroom')
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            add=self.search([('facility_id','=',vals['facility_id']),
+                             ('classroom_id','=',vals['classroom_id'])])
+            if add :
+                raise ValidationError(
+                        _("Facility name exists. Please choose a unique name or update the quantity."))
+        return super(OpFacilityLine, self).create(vals_list)
