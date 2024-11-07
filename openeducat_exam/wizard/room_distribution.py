@@ -98,13 +98,24 @@ class OpRoomDistribution(models.TransientModel):
             raise ValidationError(
                     _("Please Enter both Room And student"))
 
-        attendees = self.env['op.exam.attendees'].search([
+        booked_rooms = self.env['op.exam.attendees'].search([
         ('room_id', 'in', self.room_ids.ids),
         ('exam_id.start_time', '<', self.end_time),
-        ('exam_id.end_time', '>', self.start_time)])
+        ('exam_id.end_time', '>', self.start_time),
+        ('exam_id.state', '!=', 'done')])
 
-        if attendees:
+        if booked_rooms:
             raise ValidationError(_("The selected rooms are already booked for the specified time."))
+
+        conflicting_students = self.env['op.exam.attendees'].search([
+        ('student_id', 'in', self.student_ids.ids),
+        ('exam_id.start_time', '<', self.end_time),
+        ('exam_id.end_time', '>', self.start_time),
+        ('exam_id.state', '!=', 'done')])
+
+        if conflicting_students:
+            raise ValidationError(_("Some students are already scheduled for another exam during the specified time."))
+
         for exam in self:
             if exam.total_student > exam.room_capacity:
                 raise exceptions.AccessError(
