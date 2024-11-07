@@ -19,7 +19,8 @@
 #
 ###############################################################################
 
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class OpParentRelation(models.Model):
@@ -27,3 +28,14 @@ class OpParentRelation(models.Model):
     _description = "Relationships"
 
     name = fields.Char('Name', required=True)
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if 'name' in vals:
+                vals['name'] = vals['name'].title()
+                existing = self.search([('name', '=ilike', vals['name'])])
+                if existing:
+                    raise ValidationError(f"The relationship '{vals['name']}' already exists.")
+ 
+        return super(OpParentRelation, self).create(vals_list)
