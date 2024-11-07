@@ -36,7 +36,7 @@ class OpMediaMovement(models.Model):
     _inherit = "mail.thread"
     _description = "Media Movement"
     _rec_name = "media_id"
-    _order = "return_date DESC"
+    _order = "id DESC"
 
     media_id = fields.Many2one('op.media', 'Media', required=True)
     media_unit_id = fields.Many2one(
@@ -84,16 +84,18 @@ class OpMediaMovement(models.Model):
 
     @api.constrains('issued_date', 'return_date')
     def _check_date(self):
-        if self.issued_date > self.return_date:
-            raise ValidationError(_(
-                'Return Date cannot be set before Issued Date.'))
+        for record in self:
+            if record.issued_date > record.return_date:
+                raise ValidationError(_(
+                    'Return Date cannot be set before Issued Date.'))
 
     @api.constrains('issued_date', 'actual_return_date')
     def check_actual_return_date(self):
-        if self.actual_return_date:
-            if self.issued_date > self.actual_return_date:
-                raise ValidationError(_(
-                    'Actual Return Date cannot be set before Issued Date'))
+        for record in self:
+            if record.actual_return_date:
+                if record.issued_date > record.actual_return_date:
+                    raise ValidationError(_(
+                        'Actual Return Date cannot be set before Issued Date'))
 
     @api.onchange('media_unit_id')
     def onchange_media_unit_id(self):
