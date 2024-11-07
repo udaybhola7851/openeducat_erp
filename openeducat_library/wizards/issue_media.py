@@ -45,7 +45,8 @@ class IssueMedia(models.TransientModel):
     issued_date = fields.Date(
         'Issued Date', required=True, default=fields.Date.today())
     return_date = fields.Date('Return Date', required=True)
-
+    partner_id = fields.Many2one('res.partner', 'Person', tracking=True)
+    
     @api.constrains('issued_date', 'return_date')
     def _check_date(self):
         if self.issued_date > self.return_date:
@@ -89,13 +90,19 @@ class IssueMedia(models.TransientModel):
                         'return_date': media.return_date,
                         'state': 'issue',
                     }
+                    if media.type == 'student':
+                        media_movement_create['partner_id'] = media.student_id.partner_id.id or False
+                    elif media.type == 'faculty':
+                        media_movement_create['partner_id'] = media.faculty_id.partner_id.id or False
+                    else:
+                        media_movement_create['partner_id'] = False
+                        
                     self.env['op.media.movement'].create(media_movement_create)
                     media.media_unit_id.state = 'issue'
                     value = {'type': 'ir.actions.act_window_close'}
                 else:
-                    raise UserError(_("media Unit can not be issued \
-                    because it's state is : %s") % (dict(
-                        media_unit.unit_states).get(
+                    raise UserError(_("media Unit can not be issued because it's already: %s") % (dict( # noqa
+                        media.media_unit_id._fields['state'].selection).get(
                         media.media_unit_id.state)))
             else:
                 raise UserError(
