@@ -45,9 +45,8 @@ class OpAdmission(models.Model):
         'res.partner.title', 'Title')
     application_number = fields.Char(
         'Application Number', size=16, copy=False,
-        required=True, readonly=True, store=True,
-        default=lambda self:
-        self.env['ir.sequence'].next_by_code('op.admission'))
+        readonly=True, store=True,
+        )
     admission_date = fields.Date(
         'Admission Date', copy=False)
     application_date = fields.Datetime(
@@ -72,7 +71,7 @@ class OpAdmission(models.Model):
     city = fields.Char('City', size=64)
     zip = fields.Char('Zip', size=8)
     state_id = fields.Many2one(
-        'res.country.state', 'States')
+        'res.country.state', 'States', domain="[('country_id', '=', country_id)]")
     country_id = fields.Many2one(
         'res.country', 'Country')
     fees = fields.Float('Fees')
@@ -203,6 +202,10 @@ class OpAdmission(models.Model):
                         "Not Eligible for Admission minimum "
                         "required age is :"
                         " %s " % self.register_id.minimum_age_criteria))
+                else:
+                    if not self.application_number:
+                        self.application_number = self.env['ir.sequence'].next_by_code(
+                            'op.admission') or '/'
 
     def submit_form(self):
         self.state = 'submit'
