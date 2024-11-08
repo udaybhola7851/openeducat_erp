@@ -55,19 +55,17 @@ class OpFeesTerms(models.Model):
     discount = fields.Float(string='Discount (%)',
                             digits='Discount', default=0.0)
 
-    @api.model_create_multi
-    def create(self, vals):
-        res = super(OpFeesTerms, self).create(vals)
-        if not res.line_ids:
+    @api.constrains("line_ids")
+    def terms_validation(self):
+        if not self.line_ids:
             raise exceptions.AccessError(_("Fees Terms must be Required!"))
         total = 0.0
-        for line in res.line_ids:
+        for line in self.line_ids:
             if line.value:
                 total += line.value
-        if total != 100.0:
+        if total !=100.0:
             raise exceptions.AccessError(
-                _("Fees terms must be divided as such sum up in 100%"))
-        return res
+            _("Fees terms must be divided as such sum up in 100%"))
 
 
 class OpStudentCourseInherit(models.Model):
