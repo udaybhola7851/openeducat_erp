@@ -103,7 +103,7 @@
                                         <field name="application_number"/>
                                         <field name="admission_date" readonly="state == 'done'"/>
                                         <field name="batch_id" context="{'course_id': course_id,'get_parent_batch':1}"
-                                               readonly="state == 'done'" required="state in ('submit','fees_paid')"/>
+                                               readonly="state == 'done'" required="1" />
                                         <field name="fees" readonly="state == 'done'"
                                                required="state not in ('draft', 'submit')"/>
                                         <field name="fees_term_id" required="1"
@@ -135,6 +135,8 @@
                                     <group>
                                         <field name="birth_date" options="{'datepicker':{'warn_future': true}}"
                                                readonly="state == 'done'"/>
+                                        <field name="phone" placeholder="Phone"  widget="phone" readonly="state == 'done'"/>
+                                        <field name="mobile"  placeholder="Mobile" widget="phone" readonly="state == 'done'"/>
                                     </group>
                                 </group>
                                 <label for="street" string="Address"/>
@@ -157,10 +159,6 @@
                                     <div>
                                         <field name="country_id" placeholder="Country" options='{"no_open": True}'
                                                nolabel="1" readonly="state == 'done'"/>
-                                        <field name="phone" placeholder="Phone" nolabel="1" style="width: 100%%"
-                                               readonly="state == 'done'" required="state == 'submit'"/>
-                                        <field name="mobile" placeholder="Mobile" nolabel="1" style="width: 100%%"
-                                               readonly="state == 'done'" required="state == 'submit'"/>
                                     </div>
                                 </div>
                                 <group>
