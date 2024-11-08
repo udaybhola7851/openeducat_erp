@@ -45,7 +45,7 @@
                                 <field name="due_date"
                                        column_invisible="parent.fees_terms != 'fixed_date'" required="parent.fees_terms == 'fixed_date'"/>
                                 <field name="value" required="1"/>
-                                <field name="fees_element_line"/>
+                                <field name="fees_element_line" required="1"/>
                             </list>
                             <form string="Fees Term Line">
                                 <group colspan="4">
