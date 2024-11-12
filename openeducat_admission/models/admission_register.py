@@ -89,7 +89,7 @@ class OpAdmissionRegister(models.Model):
                 raise ValidationError(_(
                     "Min Admission can't be greater than Max Admission"))
 
-    def action_open_student(self):
+    def open_student_application(self):
         return {
             "type": "ir.actions.act_window",
             "res_model": "op.admission",

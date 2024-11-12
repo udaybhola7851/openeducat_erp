@@ -47,7 +47,7 @@
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button class="oe_stat_button" name="action_open_student"
+                            <button class="oe_stat_button" name="open_student_application"
                                     type="object" icon="fa-id-card" style="border-right: 1px solid;">
                                     <field string="Applications" name="application_count" widget="statinfo"/>
                             </button>
