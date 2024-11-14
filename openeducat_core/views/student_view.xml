@@ -114,7 +114,7 @@
                                                     <field name="middle_name" placeholder="Middle Name"/>
                                                 </td>
                                                 <td style="padding-right:10px;">
-                                                    <field name="last_name" placeholder="Last Name"/>
+                                                    <field name="last_name" placeholder="Last Name" required="1"/>
                                                 </td>
                                             </tr>
                                         </table>
@@ -127,7 +127,7 @@
                                 <group name="personal_detail">
                                     <group>
                                         <field name="gender" required="1"/>
-                                        <field name="birth_date" required="1"/>
+                                        <field name="birth_date"/>
                                         <label for="type"/>
                                         <div name="div_type">
                                             <field class="oe_inline" name="type"/>
@@ -149,8 +149,8 @@
                                                options="{&quot;always_reload&quot;: True}"/>
                                     </group>
                                     <group>
-                                        <field name="email" required="1"/>
-                                        <field name="mobile" required="1"/>
+                                        <field name="email"/>
+                                        <field name="mobile"/>
                                         <field name="lang"/>
                                         <field name="blood_group"/>
                                         <field name="nationality"/>
