@@ -189,7 +189,7 @@ class OpAdmission(models.Model):
     @api.constrains('birth_date')
     def _check_birthdate(self):
         for record in self:
-            if record.birth_date > fields.Date.today():
+            if record.birth_date and  record.birth_date > fields.Date.today():
                 raise ValidationError(_(
                     "Birth Date can't be greater than current date!"))
             elif record:
@@ -219,17 +219,20 @@ class OpAdmission(models.Model):
             record.state = 'confirm'
 
     def get_student_vals(self):
+        global_student_user=self.env['ir.config_parameter'].get_param('global_user_id')
         for student in self:
-            student_user = self.env['res.users'].create({
-                'name': student.name,
-                'login': student.email if student.email else student.application_number,
-                'image_1920': self.image or False,
-                'is_student': True,
-                'company_id': self.company_id.id,
-                'groups_id': [
-                    (6, 0,
-                     [self.env.ref('base.group_portal').id])]
-            })
+            student_user=False
+            if global_student_user:
+                student_user = self.env['res.users'].create({
+                    'name': student.name,
+                    'login': student.email if student.email else student.application_number,
+                    'image_1920': self.image or False,
+                    'is_student': True,
+                    'company_id': self.company_id.id,
+                    'groups_id': [
+                        (6, 0,
+                        [self.env.ref('base.group_portal').id])]
+                })
             details = {
                 'phone': student.phone,
                 'mobile': student.mobile,
@@ -243,9 +246,9 @@ class OpAdmission(models.Model):
                 'image_1920': student.image,
                 'zip': student.zip,
             }
-            student_user.partner_id.write(details)
             details.update({
                 'title': student.title and student.title.id or False,
+                'name': student.name,
                 'first_name': student.first_name,
                 'middle_name': student.middle_name,
                 'last_name': student.last_name,
@@ -265,9 +268,8 @@ class OpAdmission(models.Model):
                     'fees_start_date': student.fees_start_date,
                     'product_id': student.register_id.product_id.id,
                 }]],
-                'user_id': student_user.id,
+                'user_id': student_user.id if student_user else False,
                 'company_id': self.company_id.id,
-                'partner_id': student_user.partner_id.id,
             })
             return details
 
@@ -283,9 +285,10 @@ class OpAdmission(models.Model):
                     raise ValidationError(_(msg))
             if not record.student_id:
                 vals = record.get_student_vals()
-                record.partner_id = vals.get('partner_id')
-                record.student_id = student_id = self.env[
-                    'op.student'].create(vals).id
+                if vals:
+                    record.partner_id.write(vals)
+                    record.student_id = student_id = self.env[
+                        'op.student'].create(vals).id
 
             else:
                 student_id = record.student_id.id
@@ -463,3 +466,22 @@ class OpStudentCourseInherit(models.Model):
     product_id = fields.Many2one(
         'product.product', 'Course Fees',
         domain=[('type', '=', 'service')], tracking=True)
+
+
+class ResConfigSettings(models.TransientModel):
+    _inherit = 'res.config.settings'
+
+    global_user = fields.Boolean(config_parameter='global_user_id',
+    string='Create Student User')
+
+    @api.model
+    def get_values(self):
+        res = super(ResConfigSettings, self).get_values()
+        global_user = self.env['ir.config_parameter'].sudo().get_param('global_user_id')
+        res.update(global_user=global_user)
+        return res
+
+    def set_values(self):
+        super(ResConfigSettings, self).set_values()
+        param = self.env['ir.config_parameter'].sudo()
+        param.set_param('global_user_id',self.global_user)
