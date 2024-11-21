@@ -293,11 +293,11 @@
                 <div class="col-12 col-md-1 col-lg-6 mb16">
                     <div class="o_setting_left_pane">
                         <field
-                            name="global_user"/>
+                            name="global_student_user"/>
                     </div>
                     <div class="o_setting_right_pane">
                         <label
-                            for="global_user" />
+                            for="global_student_user"/>
                         <div class="text-muted"> Enable this option to create a student user</div>
                     </div>
                 </div>

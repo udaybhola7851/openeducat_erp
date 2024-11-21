@@ -219,7 +219,7 @@ class OpAdmission(models.Model):
             record.state = 'confirm'
 
     def get_student_vals(self):
-        global_student_user=self.env['ir.config_parameter'].get_param('global_user_id')
+        global_student_user=self.env['ir.config_parameter'].get_param('global_student_user')
         for student in self:
             student_user=False
             if global_student_user:
@@ -472,17 +472,17 @@ class OpStudentCourseInherit(models.Model):
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    global_user = fields.Boolean(config_parameter='global_user_id',
+    global_student_user = fields.Boolean(config_parameter='global_student_user',
     string='Create Student User')
 
     @api.model
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
-        global_user = self.env['ir.config_parameter'].sudo().get_param('global_user_id')
-        res.update(global_user=global_user)
+        global_student_user = self.env['ir.config_parameter'].sudo().get_param('global_student_user')
+        res.update(global_student_user=global_student_user)
         return res
 
     def set_values(self):
         super(ResConfigSettings, self).set_values()
         param = self.env['ir.config_parameter'].sudo()
-        param.set_param('global_user_id',self.global_user)
+        param.set_param('global_student_user',self.global_student_user)
