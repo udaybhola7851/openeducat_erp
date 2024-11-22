@@ -45,8 +45,7 @@ class OpAdmission(models.Model):
         'res.partner.title', 'Title')
     application_number = fields.Char(
         'Application Number', size=16, copy=False,
-        readonly=True, store=True,
-        )
+        readonly=True, store=True)
     admission_date = fields.Date(
         'Admission Date', copy=False)
     application_date = fields.Datetime(
@@ -190,7 +189,7 @@ class OpAdmission(models.Model):
     @api.constrains('birth_date')
     def _check_birthdate(self):
         for record in self:
-            if record.birth_date > fields.Date.today():
+            if record.birth_date and  record.birth_date > fields.Date.today():
                 raise ValidationError(_(
                     "Birth Date can't be greater than current date!"))
             elif record:
@@ -202,10 +201,12 @@ class OpAdmission(models.Model):
                         "Not Eligible for Admission minimum "
                         "required age is :"
                         " %s " % self.register_id.minimum_age_criteria))
-                else:
-                    if not self.application_number:
-                        self.application_number = self.env['ir.sequence'].next_by_code(
-                            'op.admission') or '/'
+
+    @api.constrains('name')
+    def create_sequence(self):
+        if not self.application_number:
+            self.application_number = self.env['ir.sequence'].next_by_code(
+                        'op.admission') or '/'
 
     def submit_form(self):
         self.state = 'submit'
@@ -218,18 +219,22 @@ class OpAdmission(models.Model):
             record.state = 'confirm'
 
     def get_student_vals(self):
+        is_global_student_user=self.env['ir.config_parameter'].get_param('openeducat_admission.global_student_user')
         for student in self:
-            student_user = self.env['res.users'].create({
-                'name': student.name,
-                'login': student.email,
-                'image_1920': self.image or False,
-                'is_student': True,
-                'company_id': self.company_id.id,
-                'groups_id': [
-                    (6, 0,
-                     [self.env.ref('base.group_portal').id])]
-            })
+            student_user=False
+            if is_global_student_user:
+                student_user = self.env['res.users'].create({
+                    'name': student.name,
+                    'login': student.email if student.email else student.application_number,
+                    'image_1920': self.image or False,
+                    'is_student': True,
+                    'company_id': self.company_id.id,
+                    'groups_id': [
+                        (6, 0,
+                        [self.env.ref('base.group_portal').id])]
+                })
             details = {
+                'name': student.name,
                 'phone': student.phone,
                 'mobile': student.mobile,
                 'email': student.email,
@@ -242,14 +247,14 @@ class OpAdmission(models.Model):
                 'image_1920': student.image,
                 'zip': student.zip,
             }
-            student_user.partner_id.write(details)
+            student.partner_id.write(details)
             details.update({
                 'title': student.title and student.title.id or False,
                 'first_name': student.first_name,
                 'middle_name': student.middle_name,
                 'last_name': student.last_name,
                 'birth_date': student.birth_date,
-                'gender': student.gender,
+                'gender': student.gender if student.gender else False,
                 'image_1920': student.image or False,
                 'course_detail_ids': [[0, False, {
                     'course_id':
@@ -264,9 +269,9 @@ class OpAdmission(models.Model):
                     'fees_start_date': student.fees_start_date,
                     'product_id': student.register_id.product_id.id,
                 }]],
-                'user_id': student_user.id,
+                'user_id': student_user.id if student_user else False,
                 'company_id': self.company_id.id,
-                'partner_id': student_user.partner_id.id,
+                'partner_id': student_user.partner_id.id if student_user else False
             })
             return details
 
@@ -282,9 +287,10 @@ class OpAdmission(models.Model):
                     raise ValidationError(_(msg))
             if not record.student_id:
                 vals = record.get_student_vals()
-                record.partner_id = vals.get('partner_id')
-                record.student_id = student_id = self.env[
-                    'op.student'].create(vals).id
+                if vals:
+                    record.student_id = student_id = self.env[
+                        'op.student'].create(vals).id
+                    record.partner_id = record.student_id.partner_id.id if record else False
 
             else:
                 student_id = record.student_id.id
@@ -462,3 +468,10 @@ class OpStudentCourseInherit(models.Model):
     product_id = fields.Many2one(
         'product.product', 'Course Fees',
         domain=[('type', '=', 'service')], tracking=True)
+
+
+class ResConfigSettings(models.TransientModel):
+    _inherit = 'res.config.settings'
+
+    is_global_student_user = fields.Boolean(config_parameter='openeducat_admission.global_student_user',
+    string='Create Student User')
