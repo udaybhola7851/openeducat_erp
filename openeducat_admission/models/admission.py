@@ -234,6 +234,7 @@ class OpAdmission(models.Model):
                         [self.env.ref('base.group_portal').id])]
                 })
             details = {
+                'name': student.name,
                 'phone': student.phone,
                 'mobile': student.mobile,
                 'email': student.email,
@@ -249,7 +250,6 @@ class OpAdmission(models.Model):
             student.partner_id.write(details)
             details.update({
                 'title': student.title and student.title.id or False,
-                'name': student.name,
                 'first_name': student.first_name,
                 'middle_name': student.middle_name,
                 'last_name': student.last_name,
