@@ -219,10 +219,10 @@ class OpAdmission(models.Model):
             record.state = 'confirm'
 
     def get_student_vals(self):
-        global_student_user=self.env['ir.config_parameter'].get_param('global_student_user')
+        is_global_student_user=self.env['ir.config_parameter'].get_param('openeducat_admission.global_student_user')
         for student in self:
             student_user=False
-            if global_student_user:
+            if is_global_student_user:
                 student_user = self.env['res.users'].create({
                     'name': student.name,
                     'login': student.email if student.email else student.application_number,
@@ -246,6 +246,7 @@ class OpAdmission(models.Model):
                 'image_1920': student.image,
                 'zip': student.zip,
             }
+            student.partner_id.write(details)
             details.update({
                 'title': student.title and student.title.id or False,
                 'name': student.name,
@@ -287,9 +288,9 @@ class OpAdmission(models.Model):
             if not record.student_id:
                 vals = record.get_student_vals()
                 if vals:
-                    record.partner_id.write(vals)
                     record.student_id = student_id = self.env[
                         'op.student'].create(vals).id
+                    record.partner_id = record.student_id.partner_id.id if record else False
 
             else:
                 student_id = record.student_id.id
@@ -472,17 +473,5 @@ class OpStudentCourseInherit(models.Model):
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    global_student_user = fields.Boolean(config_parameter='global_student_user',
+    is_global_student_user = fields.Boolean(config_parameter='openeducat_admission.global_student_user',
     string='Create Student User')
-
-    @api.model
-    def get_values(self):
-        res = super(ResConfigSettings, self).get_values()
-        global_student_user = self.env['ir.config_parameter'].sudo().get_param('global_student_user')
-        res.update(global_student_user=global_student_user)
-        return res
-
-    def set_values(self):
-        super(ResConfigSettings, self).set_values()
-        param = self.env['ir.config_parameter'].sudo()
-        param.set_param('global_student_user',self.global_student_user)
