@@ -30,6 +30,7 @@ from ..models import media_unit
 class IssueMedia(models.TransientModel):
     """ Issue Media """
     _name = "issue.media"
+    _inherit = "mail.thread"
     _description = "Issue Media Wizard"
 
     media_id = fields.Many2one('op.media', 'Media', required=True)
