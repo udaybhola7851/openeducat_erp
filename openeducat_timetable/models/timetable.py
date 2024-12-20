@@ -80,7 +80,7 @@ class OpSession(models.Model):
         'Days',
         group_expand='_expand_groups', store=True
     )
-    timing = fields.Char(compute='_compute_timing')
+    timing = fields.Char(compute='_compute_timing',string='Session timing')
 
     @api.depends('start_datetime', 'end_datetime')
     def _compute_timing(self):
