@@ -21,6 +21,13 @@
 .o_notebook{
     width: 100%
 }
+.truncate-email a {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: top;
+    }
 
 .o_MessagingMenu, .o_mail_systray_item{
 .o_MessagingMenu_dropdownMenu.dropdown-menu, .o_mail_systray_dropdown.dropdown-menu {

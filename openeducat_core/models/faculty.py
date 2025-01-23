@@ -105,3 +105,11 @@ class OpFaculty(models.Model):
             'label': _('Import Template for Faculties'),
             'template': '/openeducat_core/static/xls/op_faculty.xls'
         }]
+
+    class PartnerTitle(models.Model):
+        _inherit = 'res.partner.title'
+
+        @api.depends('shortcut')
+        def _compute_display_name(self):
+            for record in self:
+                record.display_name = f"{record.shortcut}"
