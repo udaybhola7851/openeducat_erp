@@ -11,7 +11,7 @@
                      groups="openeducat_core.group_op_back_office_admin"
                      id="openeducat_core_setting">
                     <div name="openeducat_core">
-                        <h2 id="openeducat_attendance_apps">Achievement</h2>
+                        <h2 id="openeducat_achievement_apps">Achievement</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Activity</h2>
+                        <h2 id="openeducat_activity_apps">Activity</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box">
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Admission</h2>
+                        <h2 id="openeducat_admission_apps">Admission</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Alumni</h2>
+                        <h2 id="openeducat_alumni_apps">Alumni</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -172,7 +172,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Asset</h2>
+                        <h2 id="openeducat_asset_apps">Asset</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Assignment</h2>
+                        <h2 id="openeducat_assignment_apps">Assignment</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -352,7 +352,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Backend Theme</h2>
+                        <h2 id="openeducat_backend_theme_apps">Backend Theme</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -365,7 +365,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2>Backup</h2>
+                        <h2 id="openeducat_backup_apps">Backup</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box" title="">
@@ -448,7 +448,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Campus</h2>
+                        <h2 id="openeducat_campus_apps">Campus</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -466,7 +466,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2>Classroom</h2>
+                        <h2 id="openeducat_classroom_apps">Classroom</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -539,7 +539,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">CRM</h2>
+                        <h2 id="openeducat_crm_apps">CRM</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-10 o_setting_box" title="">
@@ -553,7 +553,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Discipline</h2>
+                        <h2 id="openeducat_discipline_apps">Discipline</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -572,7 +572,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Event</h2>
+                        <h2 id="openeducat_event_apps">Event</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -587,7 +587,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Exam</h2>
+                        <h2 id="openeducat_exam_apps">Exam</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -640,7 +640,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Facility</h2>
+                        <h2 id="openeducat_facility_apps">Facility</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -675,7 +675,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Fees</h2>
+                        <h2 id="openeducat_fees_apps">Fees</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -727,7 +727,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Grading</h2>
+                        <h2 id="openeducat_grading_apps">Grading</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -744,7 +744,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Grievance</h2>
+                        <h2 id="openeducat_grievance_apps">Grievance</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -762,7 +762,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Health</h2>
+                        <h2 id="openeducat_health_apps">Health</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -781,7 +781,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Job</h2>
+                        <h2 id="openeducat_job_apps">Job</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -799,7 +799,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Lesson</h2>
+                        <h2 id="openeducat_lesson_apps">Lesson</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -818,7 +818,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Library</h2>
+                        <h2 id="openeducat_library_apps">Library</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box"
@@ -888,7 +888,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2>Live Classroom Integrations</h2>
+                        <h2 id="openeducat_live_classroom_apps">Live Classroom Integrations</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -944,7 +944,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2>LMS</h2>
+                        <h2 id="openeducat_lms_apps">LMS</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-12 o_setting_box" title="">
@@ -1155,7 +1155,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Meeting</h2>
+                        <h2 id="openeducat_meeting_apps">Meeting</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1170,7 +1170,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Notice Board</h2>
+                        <h2 id="openeducat_notice_board_apps">Notice Board</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1189,7 +1189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Online Appointment</h2>
+                        <h2 id="openeduca_online_appointment_apps">Online Appointment</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1207,7 +1207,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">OMR</h2>
+                        <h2 id="openeducat_omr_apps">OMR</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1222,7 +1222,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Parent</h2>
+                        <h2 id="openeducat_parent_apps">Parent</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1254,7 +1254,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Placement</h2>
+                        <h2 id="openeducat_placement_apps">Placement</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1389,7 +1389,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Scholarship</h2>
+                        <h2 id="openeducat_scholarship_apps">Scholarship</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1407,7 +1407,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Secure</h2>
+                        <h2 id="openeducat_secure_apps">Secure</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1426,7 +1426,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Skill</h2>
+                        <h2 id="openeducat_skill_apps">Skill</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
@@ -1444,7 +1444,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Subject Material</h2>
+                        <h2 id="openeducat_subject_material_apps">Subject Material</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box" title="">
@@ -1496,7 +1496,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 id="openeducat_attendance_apps">Transportation</h2>
+                        <h2 id="openeducat_transportation_apps">Transportation</h2>
                         <div class="row mt16 o_settings_container"
                              title="Specify different activities which is held in an institute.">
                             <div class="col-12 col-lg-6 o_setting_box"
