@@ -65,10 +65,29 @@ class OpAdmissionRegister(models.Model):
                                        tracking=True)
     minimum_age_criteria = fields.Integer('Minimum Required Age(Years)', default=3)
     application_count = fields.Integer(string="Total_record", compute="calculate_record_application")
+    is_favorite = fields.Boolean(string="Is Favorite", default=False)
+    company_id = fields.Many2one('res.company', string='Company',default=lambda self: self.env.user.company_id)
+    draft_count = fields.Integer(compute="_compute_counts")
+    confirm_count = fields.Integer(compute="_compute_counts")
+    done_count = fields.Integer(compute="_compute_counts")
+    online_count = fields.Integer(compute='_compute_application_counts')
 
-    company_id = fields.Many2one(
-        'res.company', string='Company',
-        default=lambda self: self.env.user.company_id)
+    def _compute_counts(self):
+        for record in self:
+            draft_admissions = record.admission_ids.filtered(lambda a: a.state == 'draft')
+            confirmed_admissions = record.admission_ids.filtered(lambda a: a.state == 'confirm')
+            done_admissions = record.admission_ids.filtered(lambda a: a.state == 'done')
+
+            record.draft_count = len(draft_admissions)
+            record.confirm_count = len(confirmed_admissions)
+            record.done_count = len(done_admissions)
+
+    def _compute_application_counts(self):
+        for record in self:
+            record.draft_count = record.admission_ids.filtered(
+                lambda a: a.state == 'draft').mapped('id').__len__()
+            record.online_count = record.admission_ids.filtered(
+                lambda a: a.state == 'online').mapped('id').__len__()
 
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
@@ -118,3 +137,46 @@ class OpAdmissionRegister(models.Model):
 
     def close_register(self):
         self.state = 'done'
+
+    def action_open_draft_courses(self):
+        return {
+            'name': 'Draft Admissions',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'res_model': 'op.admission',
+            'domain': [
+                ('id', 'in', self.admission_ids.ids),
+                ('state', '=', 'draft'),
+            ],
+            'target': 'current',
+        }
+
+    def action_open_confirmed_courses(self):
+        return {
+            'name': 'Confirmed Courses',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'res_model': 'op.admission',
+            'domain': [('id', 'in', self.admission_ids.ids),('state', '=', 'confirm')],
+            'target': 'current',
+        }
+
+    def action_open_enrolled_courses(self):
+        return {
+            'name': 'Enrolled Courses',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'res_model': 'op.admission',
+            'domain': [('id', 'in', self.admission_ids.ids),('state', '=', 'done')],
+            'target': 'current',
+        }
+
+    def action_open_online_courses(self):
+        return {
+            'name': 'Enrolled Courses',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'res_model': 'op.admission',
+            'domain': [('id', 'in', self.admission_ids.ids),('state', '=', 'online')],
+            'target': 'current',
+        }
