@@ -49,6 +49,7 @@
         'demo/attendance_register_demo.xml',
         'demo/attendance_sheet_demo.xml',
         'demo/attendance_line_demo.xml',
+        'demo/attendance_type_demo.xml',
     ],
     'images': [
         'static/description/openeducat_attendance_banner.jpg',
