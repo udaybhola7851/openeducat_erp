@@ -49,7 +49,6 @@
         'report/report_ticket.xml',
         'report/student_marksheet.xml',
         'report/report_menu.xml',
-        'wizard/student_hall_tickets_wizard_view.xml',
         'menus/op_menu.xml',
     ],
     'demo': [
