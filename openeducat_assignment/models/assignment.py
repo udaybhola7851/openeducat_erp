@@ -63,6 +63,7 @@ class OpAssignment(models.Model):
     active = fields.Boolean(default=True)
     grading_assignment_id = fields.Many2one('grading.assignment', 'Grading Assignment',
                                             required=True, ondelete="cascade")
+    assignment_sub_line_count = fields.Integer('Submissions',compute="assignment_count_compute")
 
     @api.constrains('issued_date', 'submission_date')
     def check_dates(self):
@@ -72,6 +73,9 @@ class OpAssignment(models.Model):
             if issued_date > submission_date:
                 raise ValidationError(_(
                     "Submission Date cannot be set before Issue Date."))
+
+    def assignment_count_compute(self):
+        self.assignment_sub_line_count = len(self.assignment_sub_line)
 
     @api.onchange('course_id')
     def onchange_course(self):
@@ -94,3 +98,13 @@ class OpAssignment(models.Model):
 
     def act_set_to_draft(self):
         self.state = 'draft'
+
+    def get_assignment_submissions(self):
+        return {
+            'name': 'Assignment Submissions',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'res_model': 'op.assignment.sub.line',
+        'domain': [('id', 'in', self.assignment_sub_line.ids)],
+            'target': 'current',
+        }
