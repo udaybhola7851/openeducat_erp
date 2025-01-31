@@ -47,16 +47,16 @@
                                 invisible = "active == True"/>
                         <group>
                             <group>
-                                <field name="session_id" required="1"/>
-                                <field name="subject_id"/>
-                                <field name="start_time"/>
-                                <field name="total_marks"/>
+                                <field name="session_id" required="1" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="subject_id" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="start_time" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="total_marks" readonly="state in ['held', 'done', 'cancel']"/>
                             </group>
                             <group>
-                                <field name="name"/>
-                                <field name="exam_code"/>
-                                <field name="end_time"/>
-                                <field name="min_marks"/>
+                                <field name="name" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="exam_code" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="end_time" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="min_marks" readonly="state in ['held', 'done', 'cancel']"/>
                             </group>
                         </group>
                         <group string="Attendees">
