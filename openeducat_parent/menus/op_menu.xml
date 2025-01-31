@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <menuitem id="menu_op_parent_root" name="Parents"
-                  sequence="430"
-                  web_icon="openeducat_parent,static/description/icon.png"/>
+                  parent="openeducat_core.menu_op_school_root"
+                  sequence="25"/>
 
         <menuitem id="menu_op_parent_sub_parent" name="Parents"
                   parent="menu_op_parent_root" sequence="10"

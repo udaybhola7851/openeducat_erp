@@ -57,7 +57,7 @@
         'views/op_academic_term_view.xml',
         'data/ir_cron_data.xml',
         'menu/openeducat_core_menu.xml',
-        'menu/faculty_menu.xml',
+        # 'menu/faculty_menu.xml',
         'menu/student_menu.xml',
     ],
     'demo': [
