@@ -36,7 +36,7 @@ class OpAdmissionRegister(models.Model):
         'Start Date', required=True, readonly=True,
         default=fields.Date.today())
     end_date = fields.Date(
-        'End Date', required=True, readonly=True,
+        'End Date', required=False, readonly=True,
         default=(fields.Date.today() + relativedelta(days=30)))
     course_id = fields.Many2one(
         'op.course', 'Course', required=True, readonly=True, tracking=True)
@@ -94,7 +94,7 @@ class OpAdmissionRegister(models.Model):
         for record in self:
             start_date = fields.Date.from_string(record.start_date)
             end_date = fields.Date.from_string(record.end_date)
-            if start_date > end_date:
+            if end_date and start_date > end_date:
                 raise ValidationError(
                     _("End Date cannot be set before Start Date."))
 
