@@ -42,6 +42,11 @@
                                statusbar_visible="draft,held,scheduled,done"/>
                     </header>
                     <sheet>
+                    <div name="button_box" class="oe_button_box">
+                            <button name="get_exam" type="object" class="oe_stat_button" icon="fa-book" string="exam">
+                                <field name="exams_count" widget="statinfo" />
+                            </button>
+                        </div>
                         <field name="active" invisible="1"/>
                         <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
                                 invisible="active == True"/>
@@ -59,20 +64,6 @@
                                 <field name="batch_id" context="{'course_id': course_id,'get_parent_batch':1}" readonly="state in ['held', 'done', 'cancel']"/>
                                 <field name="evaluation_type" readonly="state in ['held', 'done', 'cancel']"/>
                             </group>
-                        </group>
-                        <group string="Exam(s)">
-                            <field name="exam_ids" colspan="2" readonly="1" nolabel="1">
-                                <list string="Exam">
-                                    <field name="name"/>
-                                    <field name="subject_id"/>
-                                    <field name="exam_code"/>
-                                    <field name="start_time"/>
-                                    <field name="end_time"/>
-                                    <field name="state"/>
-                                    <field name="total_marks"/>
-                                    <field name="min_marks"/>
-                                </list>
-                            </field>
                         </group>
                     </sheet>
                     <chatter/>
