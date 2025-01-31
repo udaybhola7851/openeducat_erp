@@ -21,7 +21,8 @@
 
 import time
 
-from odoo import models, fields, api
+from odoo import models, fields, api,_
+from odoo.exceptions import ValidationError
 
 
 class ReportTicket(models.AbstractModel):
@@ -63,25 +64,28 @@ class ReportTicket(models.AbstractModel):
 
     def get_data(self, data):
         final_lst = []
-        exam_session = self.env['op.exam.session'].browse(
-            data['exam_session_id'][0])
-        student_search = self.env['op.student'].search(
-            [('course_detail_ids.course_id', '=', exam_session.course_id.id)])
-        for student in student_search:
-            student_course = self.env['op.student.course'].search(
-                [('student_id', '=', student.id),
-                 ('course_id', '=', exam_session.course_id.id)])
-            res = {
-                'exam': exam_session.name,
-                'exam_code': exam_session.exam_code,
-                'course': exam_session.course_id.name,
-                'student': student.name,
-                'image': student.image_1920,
-                'roll_number': student_course.roll_number,
-                'line': self.get_subject(exam_session),
-            }
-            final_lst.append(res)
-        return final_lst
+        active_id=data['context'].get('active_id')
+        exam_session = self.env['op.exam.session'].search([('id', '=', active_id),('state', '=','schedule')])
+        if exam_session:
+            student_search = self.env['op.student'].search(
+                [('course_detail_ids.course_id', '=', exam_session.course_id.id)])
+            for student in student_search:
+                student_course = self.env['op.student.course'].search(
+                    [('student_id', '=', student.id),
+                    ('course_id', '=', exam_session.course_id.id)])
+                res = {
+                    'exam': exam_session.name,
+                    'exam_code': exam_session.exam_code,
+                    'course': exam_session.course_id.name,
+                    'student': student.name,
+                    'image': student.image_1920,
+                    'roll_number': student_course.roll_number,
+                    'line': self.get_subject(exam_session),
+                }
+                final_lst.append(res)
+            return final_lst
+        else:
+            raise ValidationError(_("Exam Session is not scheduled yet."))
 
     @api.model
     def _get_report_values(self, docids, data=None):

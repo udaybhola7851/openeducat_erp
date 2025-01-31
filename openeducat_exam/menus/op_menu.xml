@@ -60,17 +60,6 @@
                   action="act_open_op_result_line_view"
                   groups="openeducat_exam.group_op_exam_admin,openeducat_exam.group_op_exam_user"/>
 
-        <menuitem id="menu_op_exam_general"
-                  name="General"
-                  parent="menu_op_exam_root"
-                  sequence="20"/>
-
-        <menuitem id="menu_student_hall_ticket"
-                  name="Student Hall Tickets"
-                  parent="menu_op_exam_general"
-                  sequence="30"
-                  action="student_hall_ticket_act"
-                  groups="openeducat_exam.group_op_exam_admin,openeducat_exam.group_op_exam_user"/>
 
         <menuitem id="menu_exam_configuration"
                   parent="menu_op_exam_root"
