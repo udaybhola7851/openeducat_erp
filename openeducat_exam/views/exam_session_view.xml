@@ -26,7 +26,7 @@
             <field name="model">op.exam.session</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Exam Session">
+                <form string="Exam Session" >
                     <header groups="base.group_user">
                         <button name="act_draft" invisible="state not in ['held', 'schedule', 'cancel']" type="object"
                                 string="Draft" class="oe_highlight"/>
@@ -47,17 +47,17 @@
                                 invisible="active == True"/>
                         <group>
                             <group>
-                                <field name="name" select="1"/>
-                                <field name="start_date"/>
-                                <field name="course_id"/>
-                                <field name="exam_type"/>
-                                <field name="venue" domain="[('is_venue','=',True)]" required="1"/>
+                                <field name="name" select="1" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="start_date" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="course_id" readonly="state in ['held', 'done', 'cancel']" />
+                                <field name="exam_type" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="venue" domain="[('is_venue','=',True)]" required="1" readonly="state in ['held', 'done', 'cancel']"/>
                             </group>
                             <group>
-                                <field name="exam_code"/>
-                                <field name="end_date"/>
-                                <field name="batch_id" context="{'course_id': course_id,'get_parent_batch':1}"/>
-                                <field name="evaluation_type"/>
+                                <field name="exam_code" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="end_date" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="batch_id" context="{'course_id': course_id,'get_parent_batch':1}" readonly="state in ['held', 'done', 'cancel']"/>
+                                <field name="evaluation_type" readonly="state in ['held', 'done', 'cancel']"/>
                             </group>
                         </group>
                         <group string="Exam(s)">
