@@ -68,8 +68,6 @@
             <field name="arch" type="xml">
                 <form string="Faculty">
                     <header groups="openeducat_core.group_op_back_office_admin">
-                        <button name="%(faculty_create_employee_act)d" string="Create Employee" type="action"
-                                class="oe_highlight" invisible = "emp_id != False"/>
                     </header>
                     <sheet>
                         <div name="button_box" class="oe_button_box">
