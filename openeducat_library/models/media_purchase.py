@@ -29,6 +29,8 @@ class OpMediaPurchase(models.Model):
     _description = "Media Purchase Request"
 
     name = fields.Char('Title', size=128, required=True)
+    request_no = fields.Char('Request No.', readonly=True, copy=False , default='/')
+    request_date = fields.Date('Request Date', default=fields.Date.today())
     author = fields.Char(
         'Author(s)', size=256, required=True, tracking=True)
     edition = fields.Char('Edition')
@@ -61,6 +63,10 @@ class OpMediaPurchase(models.Model):
         if self.env.user.child_ids:
             raise ValidationError(_('Invalid Action!\n Parent can not create \
             Media Purchase Requests!'))
+        for val in vals:
+            if val.get('request_no', '/') == '/':
+                val['request_no'] = self.env['ir.sequence'].next_by_code(
+                    'op.media.purchase') or '/'
         return super(OpMediaPurchase, self).create(vals)
 
     def write(self, vals):
