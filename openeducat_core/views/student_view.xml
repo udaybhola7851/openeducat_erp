@@ -172,13 +172,31 @@
             </field>
         </record>
 
+        <record id="student_view_activity" model="ir.ui.view">
+            <field name="name">op.students.activity</field>
+            <field name="model">op.student</field>
+            <field name="arch" type="xml">
+                <activity string="Contacts">
+                    <field name="id"/>
+                    <templates>
+                        <div t-name="activity-box">
+                            <img t-att-src="activity_image('op.student', 'image_1920', record.id.raw_value)" role="img" t-att-title="record.name.value" t-att-alt="record.name.value"/>
+                            <div class="ms-2">
+                                <field name="name" display="full" class="o_text_block"/>
+                            </div>
+                        </div>
+                    </templates>
+                </activity>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_open_op_student_view">
             <field name="name">Students</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.student</field>
             <field name="path">students</field>
             <field name="binding_view_types">form</field>
-            <field name="view_mode">kanban,list,form</field>
+            <field name="view_mode">kanban,list,form,activity</field>
             <field name="search_view_id" ref="view_op_student_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
