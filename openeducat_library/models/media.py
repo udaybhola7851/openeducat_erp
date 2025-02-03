@@ -25,6 +25,7 @@ from odoo import models, fields
 class OpMedia(models.Model):
     _name = "op.media"
     _description = "Media Details"
+    _inherit = "mail.thread"
     _order = "name"
 
     name = fields.Char('Title', size=128, required=True)

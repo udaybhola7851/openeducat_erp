@@ -9,6 +9,14 @@
             <field name="padding">4</field>
         </record>
 
+        <!-- Generate a Sequence Number for media purchase request -->
+        <record id="seq_media_purchase_sequence" model="ir.sequence">
+            <field name="name">Media Purchase Request</field>
+            <field name="code">op.media.purchase</field>
+            <field name="prefix">MPR</field>
+            <field name="padding">4</field>
+        </record>
+
         <!-- Sequences for op.media.unit -->
         <record id="seq_op_media_unit_barcode" model="ir.sequence">
             <field name="name">Media Unit Barcode</field>
