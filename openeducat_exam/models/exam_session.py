@@ -60,10 +60,15 @@ class OpExamSession(models.Model):
         ('done', 'Done')
     ], 'State', default='draft', tracking=True)
     active = fields.Boolean(default=True)
+    exams_count = fields.Integer(
+        compute='_compute_exams_count', string="Exams")
 
     _sql_constraints = [
         ('unique_exam_session_code',
          'unique(exam_code)', 'Code should be unique per exam session!')]
+    def _compute_exams_count(self):
+        for rec in self:
+            rec.exams_count = len(rec.exam_ids)
 
     @api.constrains('start_date', 'end_date')
     def _check_date_time(self):
@@ -89,3 +94,13 @@ class OpExamSession(models.Model):
 
     def act_cancel(self):
         self.state = 'cancel'
+
+    def get_exam(self):
+        return {
+            'name': 'Exam ',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'res_model': 'op.exam',
+            'domain': [('id', 'in', self.exam_ids.ids)],
+            'target': 'current',
+        }
