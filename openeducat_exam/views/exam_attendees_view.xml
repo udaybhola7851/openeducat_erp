@@ -70,13 +70,25 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_op_exam_attendees_pivot">
+            <field name="name">op.exam.attendees.pivot</field>
+            <field name="model">op.exam.attendees</field>
+            <field name="arch" type="xml">
+                <pivot string="Exam Attendees Pivot">
+                    <field name="student_id" type="row"/>
+                    <field name="status" type="col"/>
+                    <field name="marks" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_open_op_exam_attendees_view">
             <field name="name">Exam Attendees</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.exam.attendees</field>
             <field name="path">exam-attendees</field>
             <field name="binding_view_types">form</field>
-            <field name="view_mode">list,form</field>
+            <field name="view_mode">list,form,pivot</field>
             <field name="search_view_id" ref="view_op_exam_attendees_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>

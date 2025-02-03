@@ -93,5 +93,17 @@
                   sequence="40"
                   action="act_open_op_grade_configuration_view"
                   groups="openeducat_exam.group_op_exam_admin,openeducat_exam.group_op_exam_user"/>
+
+        <menuitem id="menu_op_exam_general"
+                  name="Reporting"
+                  parent="menu_op_exam_root"
+                  sequence="20"/>
+
+        <menuitem id="menu_student_hall_ticket"
+                  name="Result Analysis"
+                  parent="menu_op_exam_general"
+                  sequence="30"
+                  action="act_open_op_result_line_view_graph"
+                  groups="openeducat_exam.group_op_exam_admin,openeducat_exam.group_op_exam_user"/>
     </data>
 </odoo>
