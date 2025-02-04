@@ -32,7 +32,7 @@
                                     <field name="country_id"/>
                                 </div>
                                 <field name="email" class="text-truncate"/>
-                                <footer><div/></footer>
+                                <footer><field name="activity_ids" widget="kanban_activity" class="ms-auto mt-auto" style="padding-bottom:6px;"/></footer>
                             </main>
                         </t>
                     </templates>
