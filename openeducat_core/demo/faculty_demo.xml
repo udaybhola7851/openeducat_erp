@@ -12,8 +12,8 @@
             <field name="blood_group">B+</field>
             <field name="email">williammitchell@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.br"/>
-            <field name="nationality" ref="base.br"/>
+            <field name="country_id" ref="base.fi"/>
+            <field name="nationality" ref="base.fi"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_21"/>
@@ -35,8 +35,8 @@
             <field name="blood_group">O+</field>
             <field name="email">johnwhite@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.sa"/>
-            <field name="nationality" ref="base.sa"/>
+            <field name="country_id" ref="base.fr"/>
+            <field name="nationality" ref="base.fr"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_22"/>
@@ -127,8 +127,8 @@
             <field name="blood_group">B+</field>
             <field name="email">alicefoster@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.br"/>
-            <field name="nationality" ref="base.br"/>
+            <field name="country_id" ref="base.dk"/>
+            <field name="nationality" ref="base.dk"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_26"/>
@@ -141,17 +141,17 @@
 
         <record id="op_faculty_7" model="op.faculty">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Jonathan P Robinson</field>
-            <field name="first_name">Jonathan</field>
-            <field name="middle_name">P</field>
-            <field name="last_name">Robinson</field>
+            <field name="name">Cheng F Feng</field>
+            <field name="first_name">Cheng</field>
+            <field name="middle_name">F</field>
+            <field name="last_name">Feng</field>
             <field name="gender">male</field>
             <field name="birth_date">1985-06-17</field>
             <field name="blood_group">A-</field>
-            <field name="email">jonathanrobinson@example.com</field>
+            <field name="email">chengfeng@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.fi"/>
-            <field name="nationality" ref="base.fi"/>
+            <field name="country_id" ref="base.cn"/>
+            <field name="nationality" ref="base.cn"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_27"/>
@@ -164,17 +164,17 @@
 
         <record id="op_faculty_8" model="op.faculty">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Paul G Brown</field>
-            <field name="first_name">Paul</field>
-            <field name="middle_name">G</field>
-            <field name="last_name">Brown</field>
+            <field name="name">Raj K Khanna</field>
+            <field name="first_name">Raj</field>
+            <field name="middle_name">K</field>
+            <field name="last_name">Khanna</field>
             <field name="gender">male</field>
             <field name="birth_date">1987-08-04</field>
             <field name="blood_group">B+</field>
-            <field name="email">paulgbrown@example.com</field>
+            <field name="email">rajkhanna@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.za"/>
-            <field name="nationality" ref="base.za"/>
+            <field name="country_id" ref="base.in"/>
+            <field name="nationality" ref="base.in"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_28"/>
@@ -187,17 +187,17 @@
 
         <record id="op_faculty_9" model="op.faculty">
             <field name="title" ref="base.res_partner_title_miss"/>
-            <field name="name">Lisa M Brown</field>
-            <field name="first_name">Lisa</field>
-            <field name="middle_name">M</field>
-            <field name="last_name">Brown</field>
+            <field name="name">Xiulan Z Zhang</field>
+            <field name="first_name">Xiulan</field>
+            <field name="middle_name">Z</field>
+            <field name="last_name">Zhang</field>
             <field name="gender">female</field>
             <field name="birth_date">1982-04-06</field>
             <field name="blood_group">B-</field>
-            <field name="email">lisambrown@example.com</field>
+            <field name="email">xiulanzhang@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.be"/>
-            <field name="nationality" ref="base.be"/>
+            <field name="country_id" ref="base.cn"/>
+            <field name="nationality" ref="base.cn"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_29"/>
@@ -219,8 +219,8 @@
             <field name="blood_group">A-</field>
             <field name="email">sarahpclark@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.sa"/>
-            <field name="nationality" ref="base.sa"/>
+            <field name="country_id" ref="base.mx"/>
+            <field name="nationality" ref="base.mx"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_30"/>
@@ -242,8 +242,8 @@
             <field name="blood_group">B+</field>
             <field name="email">gracecooper@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.sa"/>
-            <field name="nationality" ref="base.sa"/>
+            <field name="country_id" ref="base.gl"/>
+            <field name="nationality" ref="base.gl"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_38"/>
@@ -265,8 +265,8 @@
             <field name="blood_group">A+</field>
             <field name="email">rubydwilson@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.dk"/>
-            <field name="nationality" ref="base.dk"/>
+            <field name="country_id" ref="base.br"/>
+            <field name="nationality" ref="base.br"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_39"/>
@@ -279,17 +279,17 @@
 
         <record id="op_faculty_13" model="op.faculty">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Charles B Scott</field>
-            <field name="first_name">Charles</field>
-            <field name="middle_name">B</field>
-            <field name="last_name">Scott</field>
+            <field name="name">Yusuf I Ibrahim	</field>
+            <field name="first_name">Yusuf</field>
+            <field name="middle_name">I</field>
+            <field name="last_name">Ibrahim</field>
             <field name="gender">male</field>
             <field name="birth_date">1986-03-07</field>
             <field name="blood_group">AB+</field>
-            <field name="email">charlesbscott@example.com</field>
+            <field name="email">yusufibrahim@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.nz"/>
-            <field name="nationality" ref="base.nz"/>
+            <field name="country_id" ref="base.sa"/>
+            <field name="nationality" ref="base.sa"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_40"/>
@@ -302,17 +302,17 @@
 
         <record id="op_faculty_14" model="op.faculty">
             <field name="title" ref="base.res_partner_title_miss"/>
-            <field name="name">Lily B Parker</field>
-            <field name="first_name">Lily</field>
-            <field name="middle_name">B</field>
-            <field name="last_name">Parker</field>
+            <field name="name">Amina K Kone</field>
+            <field name="first_name">Amina</field>
+            <field name="middle_name">K</field>
+            <field name="last_name">Kone</field>
             <field name="gender">female</field>
             <field name="birth_date">1979-02-22</field>
             <field name="blood_group">A-</field>
-            <field name="email">lilyparker@example.com</field>
+            <field name="email">aminakone@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.de"/>
-            <field name="nationality" ref="base.de"/>
+            <field name="country_id" ref="base.za"/>
+            <field name="nationality" ref="base.za"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_41"/>
