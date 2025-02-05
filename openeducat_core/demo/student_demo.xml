@@ -193,17 +193,17 @@
 
         <record id="op_student_10" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Jay M Malhotra</field>
-            <field name="first_name">Jay</field>
-            <field name="middle_name">M</field>
-            <field name="last_name">Malhotra</field>
+            <field name="name">Michael H Young</field>
+            <field name="first_name">Michael</field>
+            <field name="middle_name">H</field>
+            <field name="last_name">Young</field>
             <field name="gender">m</field>
             <field name="birth_date">1989-09-30</field>
             <field name="blood_group">O+</field>
-            <field name="email">jaymalhotra@example.com</field>
+            <field name="email">michaelyoung@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.in"/>
-            <field name="nationality" ref="base.in"/>
+            <field name="country_id" ref="base.ca"/>
+            <field name="nationality" ref="base.ca"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_10"/>
@@ -235,17 +235,17 @@
 
         <record id="op_student_12" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Arjun K Mehta</field>
-            <field name="first_name">Arjun</field>
-            <field name="middle_name">K</field>
-            <field name="last_name">Mehta</field>
+            <field name="name">David L Adams</field>
+            <field name="first_name">David</field>
+            <field name="middle_name">L</field>
+            <field name="last_name">Adams</field>
             <field name="gender">m</field>
             <field name="birth_date">1991-12-03</field>
             <field name="blood_group">B+</field>
-            <field name="email">arjunmehta@example.com</field>
+            <field name="email">davidadams@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.in"/>
-            <field name="nationality" ref="base.in"/>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_12"/>
@@ -361,17 +361,17 @@
 
         <record id="op_student_18" model="op.student">
             <field name="title" ref="base.res_partner_title_miss"/>
-            <field name="name">Kavya V Verma</field>
-            <field name="first_name">Kavya</field>
-            <field name="middle_name">V</field>
-            <field name="last_name">Verma</field>
+            <field name="name">Bella L Carter</field>
+            <field name="first_name">Bella</field>
+            <field name="middle_name">L</field>
+            <field name="last_name">Carter</field>
             <field name="gender">f</field>
             <field name="birth_date">2003-04-03</field>
             <field name="blood_group">AB-</field>
-            <field name="email">kavyaverma@example.com</field>
+            <field name="email">bellacarter@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.in"/>
-            <field name="nationality" ref="base.in"/>
+            <field name="country_id" ref="base.fr"/>
+            <field name="nationality" ref="base.fr"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="category_id" ref="category_roma"/>
@@ -465,17 +465,17 @@
 
         <record id="op_student_23" model="op.student">
             <field name="title" ref="base.res_partner_title_miss"/>
-            <field name="name">Shivani H Agrawal</field>
-            <field name="first_name">Shivani</field>
-            <field name="middle_name">H</field>
-            <field name="last_name">Agrawal</field>
+            <field name="name">Lily G Hill</field>
+            <field name="first_name">Lily</field>
+            <field name="middle_name">G</field>
+            <field name="last_name">Hill</field>
             <field name="gender">f</field>
             <field name="birth_date">1996-05-02</field>
             <field name="blood_group">O+</field>
-            <field name="email">shivaniagrawal@example.com</field>
+            <field name="email">lilyhill@example.com</field>
             <field name="city"></field>
-            <field name="country_id" ref="base.in"/>
-            <field name="nationality" ref="base.in"/>
+            <field name="country_id" ref="base.za"/>
+            <field name="nationality" ref="base.za"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_35"/>
