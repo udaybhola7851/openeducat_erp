@@ -52,7 +52,7 @@
                                     </h2>
                                 </div>
                                 <br></br>
-                                <table width="100%">
+                                <table width="100%" style="text-align:center;">
                                     <tbody>
                                         <tr>
                                             <td>
@@ -80,14 +80,14 @@
                                 <br></br>
                                 <table class="table table-bordered">
                                     <thead class="text-center" style="background-color:#eeeeee; font-size:14px; font-weight:600;">
-                                        <th>Period</th>
+                                        <th style="text-align: center;font-weight: bold;">Period</th>
                                         <span t-foreach="get_heading()" t-as="n">
-                                            <th>
+                                            <th style="text-align: center;font-weight: bold;">
                                                 <span t-out="n"/>
                                             </th>
                                         </span>
                                     </thead>
-                                    <tbody class="text-left" style="font-size:12px;">
+                                    <tbody class="text-left" style="font-size:12px;text-align: center;">
                                         <tr t-foreach="get_object(data)" t-as="a">
                                             <td>
                                                 <span t-out="a['name'] if  a['name']  else ''"/>
