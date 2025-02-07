@@ -84,9 +84,6 @@ class ReportTicket(models.AbstractModel):
                 }
                 final_lst.append(res)
             return final_lst
-        else:
-            raise ValidationError(_("Exam Session is not scheduled yet."))
-
     @api.model
     def _get_report_values(self, docids, data=None):
         model = self.env.context.get('active_model')
