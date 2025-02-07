@@ -167,27 +167,27 @@
                                     </div>
                                     <div class="oe_kanban_left">
                                         <li t-if="record.faculty_id.raw_value">
-                                            <b>Faculty:</b>
+                                            <b>Faculty: </b>
                                             <field name="faculty_id"/>
                                         </li>
-                                        <li t-if="record.subject_id.raw_value">
-                                            <b>Subject:</b>
+                                        <li t-if="record.subject_id.raw_value" class="text-truncate">
+                                            <b>Subject: </b>
                                             <field name="subject_id"/>
                                         </li>
                                         <li t-if="record.course_id.raw_value">
-                                            <b>Course:</b>
+                                            <b>Course: </b>
                                             <field name="course_id"/>
                                         </li>
                                         <li t-if="record.batch_id.raw_value">
-                                            <b>Batch:</b>
+                                            <b>Batch: </b>
                                             <field name="batch_id"/>
                                         </li>
                                         <li t-if="record.start_datetime.raw_value">
-                                            <b>Start:</b>
+                                            <b>Start: </b>
                                             <field name="start_datetime"/>
                                         </li>
                                         <li t-if="record.end_datetime.raw_value">
-                                            <b>End:</b>
+                                            <b>End: </b>
                                             <field name="end_datetime"/>
                                         </li>
                                     </div>
