@@ -9,7 +9,7 @@
         </record>
 
         <record id="op_res_partner_2" model="res.partner">
-            <field name="name">Jun</field>
+            <field name="name">James</field>
             <field name="mobile">1234567002</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_2.jpg"/>
@@ -44,7 +44,7 @@
         </record>
 
         <record id="op_res_partner_7" model="res.partner">
-            <field name="name">Noor</field>
+            <field name="name">Sofia</field>
             <field name="mobile">1234567007</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_7.jpg"/>
@@ -58,21 +58,21 @@
         </record>
 
         <record id="op_res_partner_9" model="res.partner">
-            <field name="name">James</field>
+            <field name="name">Michael</field>
             <field name="mobile">1234567009</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_9.jpg"/>
         </record>
 
         <record id="op_res_partner_10" model="res.partner">
-            <field name="name">Michael</field>
+            <field name="name">Joon</field>
             <field name="mobile">1234567010</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_10.jpg"/>
         </record>
 
         <record id="op_res_partner_11" model="res.partner">
-            <field name="name">Chen</field>
+            <field name="name">Aarav</field>
             <field name="mobile">1234567011</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_11.jpg"/>
@@ -114,7 +114,7 @@
         </record>
 
         <record id="op_res_partner_17" model="res.partner">
-            <field name="name">Hua</field>
+            <field name="name">Ruby</field>
             <field name="mobile">1234567017</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_17.jpg"/>
@@ -231,7 +231,7 @@
         </record>
 
         <record id="op_res_partner_34" model="res.partner">
-            <field name="name">Hassan</field>
+            <field name="name">Oren</field>
             <field name="mobile">1234567034</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_22.jpg"/>
@@ -245,7 +245,7 @@
         </record>
 
         <record id="op_res_partner_36" model="res.partner">
-            <field name="name">Omar</field>
+            <field name="name">Jun</field>
             <field name="mobile">1234567036</field>
             <field name="image_1920" type="base64"
                    file="openeducat_core/static/img/student_24.jpg"/>

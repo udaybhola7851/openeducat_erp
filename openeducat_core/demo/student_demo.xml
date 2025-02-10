@@ -11,7 +11,11 @@
             <field name="birth_date">1992-05-06</field>
             <field name="blood_group">A-</field>
             <field name="email">emmaparker@example.com</field>
-            <field name="city"></field>
+            <field name="city">New York</field>
+            <field name="street">350 5th Avenue</field>
+            <field name="street2">Suite 2300</field>
+            <field name="zip">10118</field>
+            <field name="state_id" ref="base.state_us_25"/>
             <field name="country_id" ref="base.us"/>
             <field name="nationality" ref="base.us"/>
             <field name="type">contact</field>
@@ -25,17 +29,21 @@
 
         <record id="op_student_2" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Jun W Wu</field>
-            <field name="first_name">Jun</field>
-            <field name="middle_name">W</field>
-            <field name="last_name">Wu</field>
+            <field name="name">James M Garcia</field>
+            <field name="first_name">James</field>
+            <field name="middle_name">M</field>
+            <field name="last_name">Garcia</field>
             <field name="gender">m</field>
             <field name="birth_date">1989-11-05</field>
             <field name="blood_group">AB+</field>
-            <field name="email">junwu@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.cn"/>
-            <field name="nationality" ref="base.cn"/>
+            <field name="email">jamesgarcia@example.com</field>
+            <field name="city">Berlin</field>
+            <field name="street">Alexanderplatz 7</field>
+            <field name="street2">Apartment 12B</field>
+            <field name="zip">10178</field>
+            <field name="state_id" ref="base.state_de_be"/>
+            <field name="country_id" ref="base.de"/>
+            <field name="nationality" ref="base.de"/>
             <field name="type">contact</field>
             <field name="active">True</field>
                 <field name="partner_id" ref="op_res_partner_2"/>
@@ -54,7 +62,11 @@
             <field name="birth_date">1991-03-12</field>
             <field name="blood_group">AB+</field>
             <field name="email">priyareddy@example.com</field>
-            <field name="city"></field>
+            <field name="city">Mumbai</field>
+            <field name="street">25 Marine Drive</field>
+            <field name="street2">Flat 7A, Tower B</field>
+            <field name="zip">400020</field>
+            <field name="state_id" ref="base.state_in_mh"/>
             <field name="country_id" ref="base.in"/>
             <field name="nationality" ref="base.in"/>
             <field name="type">contact</field>
@@ -75,7 +87,11 @@
             <field name="birth_date">1991-05-16</field>
             <field name="blood_group">AB-</field>
             <field name="email">alexparker@example.com</field>
-            <field name="city"></field>
+            <field name="city">New York</field>
+            <field name="street">350 5th Avenue</field>
+            <field name="street2">Suite 2300</field>
+            <field name="zip">10118</field>
+            <field name="state_id" ref="base.state_us_25"/>
             <field name="country_id" ref="base.us"/>
             <field name="nationality" ref="base.us"/>
             <field name="type">contact</field>
@@ -96,9 +112,13 @@
             <field name="birth_date">1991-09-12</field>
             <field name="blood_group">AB+</field>
             <field name="email">tayekamau@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.za"/>
-            <field name="nationality" ref="base.za"/>
+            <field name="city">São Paulo</field>
+            <field name="street">Avenida Paulista 1000</field>
+            <field name="street2">Apartment 15B</field>
+            <field name="zip">01310-100</field>
+            <field name="state_id" ref="base.state_br_sp"/>
+            <field name="country_id" ref="base.br"/>
+            <field name="nationality" ref="base.br"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_5"/>
@@ -117,9 +137,13 @@
             <field name="birth_date">1990-12-12</field>
             <field name="blood_group">B-</field>
             <field name="email">tonymitchell@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.es"/>
-            <field name="nationality" ref="base.es"/>
+            <field name="city">Lyon</field>
+            <field name="street">45 Rue de la République</field>
+            <field name="street2">Apt 3A</field>
+            <field name="zip">69002</field>
+            <field name="state_id"/>
+            <field name="country_id" ref="base.fr"/>
+            <field name="nationality" ref="base.fr"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_6"/>
@@ -130,17 +154,21 @@
 
         <record id="op_student_7" model="op.student">
             <field name="title" ref="base.res_partner_title_miss"/>
-            <field name="name">Noor A Abbas</field>
-            <field name="first_name">Noor</field>
-            <field name="middle_name">A</field>
-            <field name="last_name">Abbas</field>
+            <field name="name">Sofia M Rossi</field>
+            <field name="first_name">Sofia</field>
+            <field name="middle_name">M</field>
+            <field name="last_name">Rossi</field>
             <field name="gender">f</field>
             <field name="birth_date">1990-09-01</field>
             <field name="blood_group">A+</field>
-            <field name="email">noorabbas@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.sa"/>
-            <field name="nationality" ref="base.sa"/>
+            <field name="email">sofiarossi@example.com</field>
+            <field name="city">Rome</field>
+            <field name="street">Via del Corso 200</field>
+            <field name="street2">Apartment 4B</field>
+            <field name="zip">00186</field>
+            <field name="state_id" ref="base.state_it_ag"/>
+            <field name="country_id" ref="base.it"/>
+            <field name="nationality" ref="base.it"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_7"/>
@@ -159,9 +187,13 @@
             <field name="birth_date">1990-06-10</field>
             <field name="blood_group">B-</field>
             <field name="email">lucaslewis@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.de"/>
-            <field name="nationality" ref="base.de"/>
+            <field name="city">Toronto</field>
+            <field name="street">123 Queen Street West</field>
+            <field name="street2">Suite 250</field>
+            <field name="zip">M5H 2N2</field>
+            <field name="state_id" ref="base.state_ca_on"/>
+            <field name="country_id" ref="base.ca"/>
+            <field name="nationality" ref="base.ca"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_8"/>
@@ -172,17 +204,21 @@
 
         <record id="op_student_9" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">James M Garcia</field>
-            <field name="first_name">James</field>
-            <field name="middle_name">M</field>
-            <field name="last_name">Garcia</field>
+            <field name="name">Michael H Young</field>
+            <field name="first_name">Michael</field>
+            <field name="middle_name">H</field>
+            <field name="last_name">Young</field>
             <field name="gender">m</field>
             <field name="birth_date">1992-05-12</field>
             <field name="blood_group">AB+</field>
-            <field name="email">jamesgarcia@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.de"/>
-            <field name="nationality" ref="base.de"/>
+            <field name="email">michaelyoung@example.com</field>
+            <field name="city">Moscow</field>
+            <field name="street">10 Tverskaya Street</field>
+            <field name="street2">Apartment 5A</field>
+            <field name="zip">125009</field>
+            <field name="state_id" ref="base.state_ru_mow"/>
+            <field name="country_id" ref="base.ru"/>
+            <field name="nationality" ref="base.ru"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_9"/>
@@ -193,17 +229,21 @@
 
         <record id="op_student_10" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Michael H Young</field>
-            <field name="first_name">Michael</field>
+            <field name="name">Joon H Kim</field>
+            <field name="first_name">Joon</field>
             <field name="middle_name">H</field>
-            <field name="last_name">Young</field>
+            <field name="last_name">Kim</field>
             <field name="gender">m</field>
             <field name="birth_date">1989-09-30</field>
             <field name="blood_group">O+</field>
-            <field name="email">michaelyoung@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.ca"/>
-            <field name="nationality" ref="base.ca"/>
+            <field name="email">joonkim@example.com</field>
+            <field name="city">Seoul</field>
+            <field name="street">25 Gangnam-daero</field>
+            <field name="street2">Apartment 10B</field>
+            <field name="zip">06236</field>
+            <field name="state_id"/>
+            <field name="country_id" ref="base.kr"/>
+            <field name="nationality" ref="base.kr"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_10"/>
@@ -214,17 +254,21 @@
 
         <record id="op_student_11" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Chen H Hao</field>
-            <field name="first_name">Chen</field>
-            <field name="middle_name">H</field>
-            <field name="last_name">Hao</field>
+            <field name="name">Aarav M Sharma</field>
+            <field name="first_name">Aarav</field>
+            <field name="middle_name">M</field>
+            <field name="last_name">Sharma</field>
             <field name="gender">m</field>
             <field name="birth_date">1990-07-12</field>
             <field name="blood_group">O+</field>
-            <field name="email">chenhao@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.cn"/>
-            <field name="nationality" ref="base.cn"/>
+            <field name="email">aaravsharma@example.com</field>
+            <field name="city">New Delhi</field>
+            <field name="street">45 Connaught Place</field>
+            <field name="street2">Flat 3C, Block B</field>
+            <field name="zip">110001</field>
+            <field name="state_id" ref="base.state_in_dl"/>
+            <field name="country_id" ref="base.in"/>
+            <field name="nationality" ref="base.in"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_11"/>
@@ -243,9 +287,13 @@
             <field name="birth_date">1991-12-03</field>
             <field name="blood_group">B+</field>
             <field name="email">davidadams@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.us"/>
-            <field name="nationality" ref="base.us"/>
+            <field name="city">Madrid</field>
+            <field name="street">Calle Gran Vía 28</field>
+            <field name="street2">Apartment 2B</field>
+            <field name="zip">28013</field>
+            <field name="state_id" ref="base.state_es_m"/>
+            <field name="country_id" ref="base.es"/>
+            <field name="nationality" ref="base.es"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_12"/>
@@ -264,9 +312,13 @@
             <field name="birth_date">1990-07-02</field>
             <field name="blood_group">B+</field>
             <field name="email">imanijengo@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.za"/>
-            <field name="nationality" ref="base.za"/>
+            <field name="city">Mexico City</field>
+            <field name="street">Av. Paseo de la Reforma 250</field>
+            <field name="street2">Apartment 12A</field>
+            <field name="zip">06600</field>
+            <field name="state_id" ref="base.state_mx_df"/>
+            <field name="country_id" ref="base.mx"/>
+            <field name="nationality" ref="base.mx"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_13"/>
@@ -285,9 +337,13 @@
             <field name="birth_date">1991-03-18</field>
             <field name="blood_group">O+</field>
             <field name="email">danielking@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.be"/>
-            <field name="nationality" ref="base.be"/>
+            <field name="city">Jakarta</field>
+            <field name="street">Jl. Sudirman No. 45</field>
+            <field name="street2">Tower B, Floor 10</field>
+            <field name="zip">10250</field>
+            <field name="state_id" ref="base.state_id_jk"/>
+            <field name="country_id" ref="base.id"/>
+            <field name="nationality" ref="base.id"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_14"/>
@@ -306,9 +362,13 @@
             <field name="birth_date">1991-11-02</field>
             <field name="blood_group">AB-</field>
             <field name="email">henrylee@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.br"/>
-            <field name="nationality" ref="base.br"/>
+            <field name="city">Amsterdam</field>
+            <field name="street">Damrak 100</field>
+            <field name="street2">Apartment 3C</field>
+            <field name="zip">1012 LP</field>
+            <field name="state_id" ref="base.state_nl_nh"/>
+            <field name="country_id" ref="base.nl"/>
+            <field name="nationality" ref="base.nl"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_15"/>
@@ -327,9 +387,13 @@
             <field name="birth_date">2003-01-06</field>
             <field name="blood_group">O+</field>
             <field name="email">camilabrooks@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.br"/>
-            <field name="nationality" ref="base.br"/>
+            <field name="city">London</field>
+            <field name="street">221B Baker Street</field>
+            <field name="street2">Apartment 2A</field>
+            <field name="zip">NW1 6XE</field>
+            <field name="state_id" ref="base.state_uk98"/>
+            <field name="country_id" ref="base.uk"/>
+            <field name="nationality" ref="base.uk"/>
             <field name="category_id" ref="category_hawaiian"/>
             <field name="type">contact</field>
             <field name="active">True</field>
@@ -340,17 +404,21 @@
 
         <record id="op_student_17" model="op.student">
             <field name="title" ref="base.res_partner_title_miss"/>
-            <field name="name">Hua L Lin</field>
-            <field name="first_name">Hua</field>
-            <field name="middle_name">L</field>
-            <field name="last_name">Lin</field>
+            <field name="name">Ruby N Johnson</field>
+            <field name="first_name">Ruby</field>
+            <field name="middle_name">N</field>
+            <field name="last_name">Johnson</field>
             <field name="gender">f</field>
             <field name="birth_date">2003-12-03</field>
             <field name="blood_group">B-</field>
-            <field name="email">hualin@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.cn"/>
-            <field name="nationality" ref="base.cn"/>
+            <field name="email">rubyjohnson@example.com</field>
+            <field name="city">Sydney</field>
+            <field name="street">100 George Street</field>
+            <field name="street2">Apartment 5C</field>
+            <field name="zip">2000</field>
+            <field name="state_id" ref="base.state_au_2"/>
+            <field name="country_id" ref="base.au"/>
+            <field name="nationality" ref="base.au"/>
             <field name="type">contact</field>
             <field name="category_id" ref="category_roma"/>
             <field name="active">True</field>
@@ -369,9 +437,13 @@
             <field name="birth_date">2003-04-03</field>
             <field name="blood_group">AB-</field>
             <field name="email">bellacarter@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.fr"/>
-            <field name="nationality" ref="base.fr"/>
+            <field name="city">Bern</field>
+            <field name="street">Bundesgasse 15</field>
+            <field name="street2">Apartment 2A</field>
+            <field name="zip">3011</field>
+            <field name="state_id" ref="base.state_ch_be"/>
+            <field name="country_id" ref="base.ch"/>
+            <field name="nationality" ref="base.ch"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="category_id" ref="category_roma"/>
@@ -390,9 +462,13 @@
             <field name="birth_date">2002-03-05</field>
             <field name="blood_group">A+</field>
             <field name="email">sekouomari@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.za"/>
-            <field name="nationality" ref="base.za"/>
+            <field name="city">Warsaw</field>
+            <field name="street">Aleje Jerozolimskie 100</field>
+            <field name="street2">Apartment 5B</field>
+            <field name="zip">00-807</field>
+            <field name="state_id"/>
+            <field name="country_id" ref="base.pl"/>
+            <field name="nationality" ref="base.pl"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_19"/>
@@ -411,9 +487,13 @@
             <field name="birth_date">2003-09-04</field>
             <field name="blood_group">B+</field>
             <field name="email">samphillips@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.fr"/>
-            <field name="nationality" ref="base.fr"/>
+            <field name="city">Stockholm</field>
+            <field name="street">Drottninggatan 50</field>
+            <field name="street2">Apartment 4C</field>
+            <field name="zip">111 21</field>
+            <field name="state_id" ref="base.state_se_ab"/>
+            <field name="country_id" ref="base.se"/>
+            <field name="nationality" ref="base.se"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_20"/>
@@ -431,9 +511,13 @@
             <field name="birth_date">1998-06-20</field>
             <field name="blood_group">A-</field>
             <field name="email">benwood@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.za"/>
-            <field name="nationality" ref="base.za"/>
+            <field name="city">Buenos Aires</field>
+            <field name="street">Avenida 9 de Julio 500</field>
+            <field name="street2">Apartment 3A</field>
+            <field name="zip">C1043AAS</field>
+            <field name="state_id" ref="base.state_ar_b"/>
+            <field name="country_id" ref="base.ar"/>
+            <field name="nationality" ref="base.ar"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="category_id" ref="category_hawaiian"/>
@@ -444,17 +528,21 @@
 
         <record id="op_student_22" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Hassan J Jaber</field>
-            <field name="first_name">Hassan</field>
-            <field name="middle_name">J</field>
-            <field name="last_name">Jaber</field>
+            <field name="name">Oren H Shimon</field>
+            <field name="first_name">Oren</field>
+            <field name="middle_name">H</field>
+            <field name="last_name">Shimon</field>
             <field name="gender">m</field>
             <field name="birth_date">2002-01-10</field>
             <field name="blood_group">B+</field>
-            <field name="email">hassanjaber@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.sa"/>
-            <field name="nationality" ref="base.sa"/>
+            <field name="email">orenshimon@example.com</field>
+            <field name="city">Tel Aviv</field>
+            <field name="street">100 Dizengoff Street</field>
+            <field name="street2">Apartment 7B</field>
+            <field name="zip">6311611</field>
+            <field name="state_id"/>
+            <field name="country_id" ref="base.il"/>
+            <field name="nationality" ref="base.il"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="category_id" ref="category_roma"/>
@@ -473,7 +561,11 @@
             <field name="birth_date">1996-05-02</field>
             <field name="blood_group">O+</field>
             <field name="email">lilyhill@example.com</field>
-            <field name="city"></field>
+            <field name="city">Cape Town</field>
+            <field name="street">75 Long Street</field>
+            <field name="street2">Apartment 4C</field>
+            <field name="zip">8001</field>
+            <field name="state_id" ref="base.state_za_wc"/>
             <field name="country_id" ref="base.za"/>
             <field name="nationality" ref="base.za"/>
             <field name="type">contact</field>
@@ -485,17 +577,21 @@
 
         <record id="op_student_24" model="op.student">
             <field name="title" ref="base.res_partner_title_mister"/>
-            <field name="name">Omar F Farouk</field>
-            <field name="first_name">Omar</field>
-            <field name="middle_name">F</field>
-            <field name="last_name">Farouk</field>
+            <field name="name">Jun W Wu</field>
+            <field name="first_name">Jun</field>
+            <field name="middle_name">W</field>
+            <field name="last_name">Wu</field>
             <field name="gender">m</field>
             <field name="birth_date">2003-12-18</field>
             <field name="blood_group">B+</field>
-            <field name="email">omarfarouk@example.com</field>
-            <field name="city"></field>
-            <field name="country_id" ref="base.sa"/>
-            <field name="nationality" ref="base.sa"/>
+            <field name="email">junwu@example.com</field>
+            <field name="city">Beijing</field>
+            <field name="street">456 Zhongshan Avenue</field>
+            <field name="street2">Room 12B, Tower A</field>
+            <field name="zip">100010</field>
+            <field name="state_id" ref="base.state_cn_BJ"/>
+            <field name="country_id" ref="base.cn"/>
+            <field name="nationality" ref="base.cn"/>
             <field name="type">contact</field>
             <field name="active">True</field>
             <field name="partner_id" ref="op_res_partner_36"/>
@@ -514,7 +610,11 @@
                 <field name="birth_date">1992-07-25</field>
             <field name="blood_group">AB-</field>
             <field name="email">samirabassam@example.com</field>
-            <field name="city"></field>
+            <field name="city">Riyadh</field>
+            <field name="street">250 King Fahd Road</field>
+            <field name="street2">Apartment 10B</field>
+            <field name="zip">11564</field>
+            <field name="state_id" ref="base.state_sa_70"/>
             <field name="country_id" ref="base.sa"/>
             <field name="nationality" ref="base.sa"/>
             <field name="type">contact</field>
