@@ -35,16 +35,16 @@
                                     <div style="width:50%; margin-left:15px;">
                                         <b>From Date:</b>
                                         <span t-esc="data['start_date']" t-options="{'widget':'date'}"/>
-                                        <b>To Date:</b>
+                                        <b style="margin-left:10px;">To Date:</b>
                                         <span t-esc="data['end_date']" t-options="{'widget':'date'}"/>
                                     </div>
                                 </div>
                                 <br></br>
                                 <table class="table table-bordered">
                                     <thead class="text-center" style="background-color:#eeeeee; font-size:14px; font-weight:600;">
-                                        <th>Period</th>
+                                        <th style="text-align:center;font-weight:bold;">Period</th>
                                         <span t-foreach="get_heading()" t-as="n">
-                                            <th>
+                                            <th style="text-align:center;font-weight:bold;">
                                                 <span t-out="n"/>
                                             </th>
                                         </span>

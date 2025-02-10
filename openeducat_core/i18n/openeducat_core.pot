@@ -1541,11 +1541,6 @@ msgid "Fees Access for Parents"
 msgstr ""
 
 #. module: openeducat_core
-#: model:ir.model.fields,field_description:openeducat_core.field_res_config_settings__module_openeducat_fees_enterprise
-msgid "Fees Enterprise"
-msgstr ""
-
-#. module: openeducat_core
 #: model:ir.model.fields,field_description:openeducat_core.field_res_config_settings__module_openeducat_fees_on_duration
 msgid "Fees On Duration"
 msgstr ""
