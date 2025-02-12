@@ -38,11 +38,11 @@
               groups="base.group_system"
               sequence="1"/>
 
-        <menuitem id="menu_admission_register" name="Admission Registers"
-                  sequence="10"
-                  groups="openeducat_admission.group_op_admission_admin"
-                  parent="menu_admission_config"
-                  action="act_open_op_admission_register_view"/>
+<!--        <menuitem id="menu_admission_register" name="Admission Registers"-->
+<!--                  sequence="10"-->
+<!--                  groups="openeducat_admission.group_op_admission_admin"-->
+<!--                  parent="menu_admission_config"-->
+<!--                  action="act_open_op_admission_register_view"/>-->
 
     </data>
 </odoo>
