@@ -20,7 +20,7 @@
 
 {
     'name': 'OpenEduCat Core',
-    'version': '18.0.5.0',
+    'version': '18.0.3.0',
     'license': 'LGPL-3',
     'category': 'Education',
     "sequence": 1,
